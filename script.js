@@ -8,8 +8,10 @@ function createGrid(num){
     container.replaceChildren();
     for( i=1 ; i <= num*num ; i++){
         let block = document.createElement('div');
-        block.classList.add('block');
-        block.style['flexBasis'] = `${100/num}%`
+        let block_container = document.createElement('div');
+        block_container.classList.add('block');
+        block_container.style['flexBasis'] = `${100/num}%`
+        block.style['flex'] = `1`
         block.addEventListener('mouseover',function(event) {  
             if (rainbow.checked){
                 event.target.style['background-color'] = `rgb(${Math.floor(Math.random() * 255)},
@@ -20,12 +22,13 @@ function createGrid(num){
             }
                 
         })
-        container.appendChild(block);
+        container.appendChild(block_container);
+        block_container.appendChild(block);
     }
 }
 
 size.addEventListener('click',()=> {
-    let num = prompt('choose the size of the grid');
+    let num = prompt('choose a number between 1 and 100');
     createGrid(num);
 })
 
