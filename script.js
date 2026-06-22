@@ -25,9 +25,10 @@ function createGrid(num){
                                                             ${Math.floor(Math.random() * 255)})`;
             }else{
                 event.target.style['background-color'] = 'black';
+                event.target.opacity = event.target.opacity + 0.1;   
+                event.target.style['opacity'] = `${event.target.opacity}`
             }
-            event.target.opacity = event.target.opacity + 0.1;   
-            event.target.style['opacity'] = `${event.target.opacity}` 
+             
         })
         container.appendChild(block_container);
         block_container.appendChild(block);
