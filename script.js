@@ -9,18 +9,22 @@ function createGrid(num){
     for( i=1 ; i <= num*num ; i++){
         let block = document.createElement('div');
         let block_container = document.createElement('div');
-        block_container.classList.add('block');
+        block_container.classList.add('block_container');
+        block.classList.add('block');
+        block.opacity = 0;
         block_container.style['flexBasis'] = `${100/num}%`
         block.style['flex'] = `1`
-        block.addEventListener('mouseover',function(event) {  
+        block.addEventListener('mouseover',function(event) {
+        
             if (rainbow.checked){
                 event.target.style['background-color'] = `rgb(${Math.floor(Math.random() * 255)},
                                                             ${Math.floor(Math.random() * 255)},
                                                             ${Math.floor(Math.random() * 255)})`;
             }else{
-                event.target.style['background-color'] = 'grey';
+                event.target.style['background-color'] = 'black';
             }
-                
+            event.target.opacity = event.target.opacity + 0.1;   
+            event.target.style['opacity'] = `${event.target.opacity}` 
         })
         container.appendChild(block_container);
         block_container.appendChild(block);

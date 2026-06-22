@@ -20,8 +20,12 @@
   margin-top: 20px;
 }
 
-.block {
+.block_container {
   border: 1px solid black;
   display: flex;
+}
+
+.block {
+  opacity: 0.5;
 }
 
