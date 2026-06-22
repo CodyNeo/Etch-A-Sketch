@@ -4,7 +4,10 @@ const rainbow = document.querySelector('.rainbow');
 
 
 function createGrid(num){
-    
+    if (!(1 <= num && num <= 100)){
+        alert('Wrong size!!!');
+        return;
+    }
     container.replaceChildren();
     for( i=1 ; i <= num*num ; i++){
         let block = document.createElement('div');
