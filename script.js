@@ -15,11 +15,12 @@ function createGrid(num){
         block_container.classList.add('block_container');
         block.classList.add('block');
         block.opacity = 0;
-        block_container.style['flexBasis'] = `${100/num}%`
+        block_container.style.width = block_container.style.height = `${640/num}px`
         block.style['flex'] = `1`
         block.addEventListener('mouseover',function(event) {
         
             if (rainbow.checked){
+                event.target.style['opacity'] = 1;
                 event.target.style['background-color'] = `rgb(${Math.floor(Math.random() * 255)},
                                                             ${Math.floor(Math.random() * 255)},
                                                             ${Math.floor(Math.random() * 255)})`;
